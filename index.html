@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Portfolio of Pratish Mashankar - ML Engineer, Data Scientist" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratish Mashankar | Portfolio</title>
+
+  <!-- Google Fonts (Example: Inter) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" 
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+    <div class="container nav-container">
+      <!-- LOGO -->
+      <a href="#home" class="logo">PM</a>
+  
+      <!-- HAMBURGER ICON -->
+      <div class="nav-toggle" id="nav-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+  
+      <!-- NAV LINKS + SOCIAL ICONS -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-item">Home</a></li>
+        <li><a href="#timeline" class="nav-item">Timeline</a></li>
+        <li><a href="#skills" class="nav-item">Skills</a></li>
+        <li><a href="#projects" class="nav-item">Projects</a></li>
+        <li><a href="#blogs" class="nav-item">Blogs</a></li>
+        <li><a href="#contact" class="nav-item">Contact Me</a></li>
+  
+        <!-- LinkedIn Icon -->
+        <li>
+          <a 
+            href="https://www.linkedin.com/in/pratish-mashankar/" 
+            class="nav-item" 
+            target="_blank"
+            aria-label="LinkedIn Profile"
+          >
+            <img 
+              src="images/linkedin.png" 
+              alt="LinkedIn" 
+              class="nav-icon" 
+            />
+          </a>
+        </li>
+        
+        <!-- GitHub Icon -->
+        <li>
+          <a 
+            href="https://github.com/PratishMashankar" 
+            class="nav-item" 
+            target="_blank"
+            aria-label="GitHub Profile"
+          >
+            <img 
+              src="images/github.png" 
+              alt="GitHub" 
+              class="nav-icon" 
+            />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+
+  <!-- ========== HOME SECTION ========== -->
+  <header id="home" class="home-section">
+    <div class="container home-content">
+      <div class="home-text">
+        <h1>Hello, I’m <span class="highlight">Pratish Mashankar</span></h1>
+        <h2>I am a <span id="typing-text"></span></h2>
+        <p class="home-description">
+          Leading Data to Decisions. I help companies develop data solutions to reach their business goals.
+        </p>
+        <div class="home-buttons">
+          <button class="btn btn-primary" onclick="window.location.href='#contact'">
+            Contact Me
+          </button>
+          <button class="btn btn-secondary" onclick="window.open('images/resume.pdf', '_blank')">
+            Download Resume
+          </button>
+        </div>
+      </div>
+      <div class="home-image">
+        <!-- Innovative shape for your profile picture: a hex clip-path -->
+        <img src="images/profile.jpg" alt="Pratish Mashankar" />
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========== TIMELINE SECTION ========== -->
+<section id="timeline" class="timeline-section">
+    <div class="container">
+      <h2 class="section-title">Experience & Education</h2>
+      <!-- Center line timeline in reverse chronological order -->
+      <div class="timeline">
+        
+        <!-- MOST RECENT FIRST -->
+        <div class="timeline-item right">
+          <div class="timeline-content pop-on-scroll">
+            
+            <h3>Data Scientist </h3>
+            <h4>Radford University</h4>
+            <h5>July 2024 - Present</h5>
+            <p class="location">Radford, VA</p>
+            <!-- Tech bubbles for skills -->
+            <div class="tech-bubbles">
+              <span class="tech-bubble">Data Analysis</span>
+              <span class="tech-bubble">Python</span>
+              <span class="tech-bubble">Power BI</span>
+            </div>
+            <p>
+                I led a data collection strategy that increased the knowledge rate by 101.5% in two months, integrating survey and 
+                LinkedIn data from 3,000+ graduates to build Radford University's first comprehensive post-graduation dataset. 
+                I managed Lightcast products to capture graduation outcomes and designed Power BI dashboards that transformed complex 
+                data into actionable insights for university leadership.
+            </p>
+          </div>
+        </div>
+  
+        <div class="timeline-item left">
+          <div class="timeline-content pop-on-scroll">
+            <h3>M.S. in Computer Science</h3>
+            <h4>George Mason University</h4>
+            <h5>May 2024</h5>
+            <p class="location">Fairfax, VA</p>
+            <!-- Tech bubbles for skills -->
+            <div class="tech-bubbles">
+              <span class="tech-bubble">Machine Learning</span>
+              <span class="tech-bubble">Deep Learning</span>
+              <span class="tech-bubble">NLP</span>
+            </div>
+            <p>
+              Pursued concentration in Machine Learning. Relvant coursework included Data Mining, Machine Learning, Deep Learning, 
+              Advance NLP, Artificial Intelligence
+            </p>
+          </div>
+        </div>
+  
+        <!-- Older experience / education further down -->
+        <div class="timeline-item right">
+          <div class="timeline-content pop-on-scroll">
+            <h3>Data Analyst</h3>
+            <h4>George Mason University</h4>
+            <h5>November 2024 - May 2024</h5>
+            <p class="location">Fairfax, VA</p>
+            <!-- Tech bubbles for skills -->
+            <div class="tech-bubbles">
+              <span class="tech-bubble">Python</span>
+              <span class="tech-bubble">MS Office</span>
+              <span class="tech-bubble">TensorFlow</span>
+            </div>
+            <p>
+                I fine-tuned the PEGASUS transformer on 16,000 conversations for text summarization and deployed it as a FastAPI app on 
+                AWS EC2 using GitHub Actions, ECR, and Docker. I also performed Python-based EDA on 9,000 VoIP records for GMU’s Telecom 
+                System Replacement, delivering migration strategies and ROI reports for 5,000 faculty and staff.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="timeline-content pop-on-scroll">
+              <h3>NLP Summer Intern</h3>
+              <h4>George Mason University</h4>
+              <h5>May 2023 - August 2023</h5>
+              <p class="location">Fairfax, VA</p>
+              <!-- Tech bubbles for skills -->
+              <div class="tech-bubbles">
+                <span class="tech-bubble">SPARQL</span>
+                <span class="tech-bubble">NLP</span>
+                <span class="tech-bubble">TensorFlow</span>
+              </div>
+              <p>
+                I developed 16 SPARQL templates to automate dataset generation for 10,000+ Wikidata queries, enhancing LLM fine-tuning. 
+                This optimization aimed to improve query generation accuracy using natural language prompts by over 6%.
+              </p>
+            </div>
+        </div>
+
+        <div class="timeline-item right">
+            <div class="timeline-content pop-on-scroll">
+              <h3>Data Science Engineer</h3>
+              <h4>Virtusa Corporation</h4>
+              <h5>July 2020 - August 2022</h5>
+              <p class="location">Hyderabad, India</p>
+              <!-- Tech bubbles for skills -->
+              <div class="tech-bubbles">
+                <span class="tech-bubble">Python</span>
+                <span class="tech-bubble">AWS</span>
+                <span class="tech-bubble">Sagemaker</span>
+              </div>
+              <p>
+                I built and deployed an NLP solution using custom AWS Comprehend models to detect GxP compliance risks with 85% accuracy,
+                 trained on 4,000 clinical audit reports. I established data pipelines for real-time risk prediction on AWS EC2, 
+                 integrating S3-triggered Lambda functions and visualizing insights with Amazon QuickSight. Additionally, I developed 
+                 Autosampler, a stratified data sampling framework, and contributed to its UI by implementing Django RESTful APIs, 
+                 reducing audit time by 80%.
+              </p>
+            </div>
+        </div>
+
+        <div class="timeline-item left">
+            <div class="timeline-content pop-on-scroll">
+              <h3>B. Tech. in Information Technology</h3>
+              <h4>Jawaharlal Nehru Technological University |</h4>
+              <h5>November 2027 - July 2021</h5>
+              <p class="location">Hyderabad, India</p>
+              <!-- Tech bubbles for skills -->
+              <div class="tech-bubbles">
+                <span class="tech-bubble">Machine Learning</span>
+                <span class="tech-bubble">Salesforce</span>
+                <span class="tech-bubble">AI</span>
+              </div>
+              <p>
+                I published a machine learning research paper and won Best Technical Poster in AI Expert Systems. Additionally, I earned 
+                a Salesforce certification and contributed as Vice President of the Student Council, Editor-in-Chief of kMITRA 
+                E-Magazine, and Founder of Vachan Speakers' Club. I also led theatre performances as a Member Lead.
+              </p>
+            </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="skills-section card-section">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-container">
+        
+        <div class="skill-category pop-on-scroll">
+            <h3>Programming</h3>
+            <ul>
+              <li>Python (Pandas, NumPy, Django, Scikit-learn)</li>
+              <li>Java (Android)</li>
+              <li>C++, C</li>
+              <li>MySQL RDBMS</li>
+              <li>Apache Spark</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category pop-on-scroll">
+            <h3>Data Science</h3>
+            <ul>
+              <li>Generative AI (LLMs, Transformers)</li>
+              <li>Retrieval Augmented Generation</li>
+              <li>Text Summarization</li>
+              <li>Machine Translation</li>
+              <li>Classification & Regression</li>
+              <li>Ensemble & Unsupervised Learning</li>
+              <li>Feature Engineering</li>
+              <li>Statistical Modelling</li>
+              <li>Neural Networks (CNN, RNN)</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category pop-on-scroll">
+            <h3>ML Frameworks & Tools</h3>
+            <ul>
+              <li>TensorFlow, Keras, PyTorch, Hugging Face</li>
+              <li>MLOps (AWS SageMaker, Comprehend, Bedrock)</li>
+              <li>Power BI, Tableau</li>
+            </ul>
+          </div>
+          
+          <div class="skill-category pop-on-scroll">
+            <h3>DevOps</h3>
+            <ul>
+              <li>Amazon Web Services (S3, EC2, ECR, boto3)</li>
+              <li>Kubernetes</li>
+              <li>Git (GitHub Actions, Workflows, CI/CD)</li>
+              <li>Docker</li>
+              <li>Terraform</li>
+            </ul>
+          </div>
+          
+
+      </div>
+    </div>
+  </section>
+
+ <!-- ========== PROJECTS SECTION ========== -->
+<section id="projects" class="projects-section card-section">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-container">
+
+        <!-- New Project -->
+        <div class="project-card pop-on-scroll">
+          <img src="images/e2e_textsum.webp" alt="Project 1" />
+          <div class="project-info">
+            <h3>
+              <a 
+                href="https://github.com/PratishMashankar/end-to-end-text-summarizer" 
+                target="_blank" 
+                class="project-link"
+              >
+                End-to-end Text Summarization
+              </a>
+            </h3>
+            <div class="tech-bubbles">
+              <span class="tech-bubble">Hugging Face Transformers</span>
+              <span class="tech-bubble">AWS (EC2, ECR, SageMaker)</span>
+              <span class="tech-bubble">Docker </span>
+              <span class="tech-bubble">Python</span>
+            </div>
+            <p>
+                Fine-tuning a HuggingFace Transformer for text summarization with AWS deployment and CI/CD integration.
+            </p>
+          </div>
+        </div>
+        <!-- More project cards as needed... -->
+
+        <!-- New Project -->
+        <div class="project-card pop-on-scroll">
+            <img src="images/noahbert.png" alt="Project 1" />
+            <div class="project-info">
+              <h3>
+                <a 
+                  href="https://github.com/PratishMashankar/noahbert-hatespeech-detection.git" 
+                  target="_blank" 
+                  class="project-link"
+                >
+                Multi-Class Hate Speech Classification using NoahBERT
+
+                </a>
+              </h3>
+              <div class="tech-bubbles">
+                <span class="tech-bubble">BERT</span>
+                <span class="tech-bubble">Pytorch</span>
+                <span class="tech-bubble">Python </span>
+                <span class="tech-bubble">Scikit-learn</span>
+              </div>
+              <p>
+                Enhanced Hate Speech Classification with NoahBERT
+              </p>
+            </div>
+          </div>
+          <!-- More project cards as needed... -->
+
+          <!-- New Project -->
+        <div class="project-card pop-on-scroll">
+            <img src="images/gramrepro.png" alt="Project 1" />
+            <div class="project-info">
+              <h3>
+                <a 
+                  href="https://github.com/PratishMashankar/grammarly-reproduction.git" 
+                  target="_blank" 
+                  class="project-link"
+                >
+                IteraTeR Reproducibility Study
+
+                </a>
+              </h3>
+              <div class="tech-bubbles">
+                <span class="tech-bubble">Transformers </span>
+                <span class="tech-bubble">BERT, RoBERTa </span>
+                <span class="tech-bubble">XLM-RoBERTa, mT5 </span>
+                <span class="tech-bubble">BART, Pegasus </span>
+                <span class="tech-bubble">Pytorch</span>
+                <span class="tech-bubble">Python </span>
+                <span class="tech-bubble">Google API</span>
+              </div>
+              <p>
+                Reproducibility Study of Iterative Text Revision and Multilingual Intent Classification
+              </p>
+            </div>
+          </div>
+          <!-- More project cards as needed... -->
+
+            <!-- New Project -->
+        <div class="project-card pop-on-scroll">
+            <img src="images/machinebias.webp" alt="Project 1" />
+            <div class="project-info">
+              <h3>
+                <a 
+                  href="https://github.com/PratishMashankar/auditing-for-bias.git" 
+                  target="_blank" 
+                  class="project-link"
+                >
+                Auditing for Machine Bias
+
+                </a>
+              </h3>
+              <div class="tech-bubbles">
+                <span class="tech-bubble">Gradient Boosting Machine (GBM) </span>
+                <span class="tech-bubble">Fair Classifier (Diversity Parity)</span>
+                <span class="tech-bubble">Python </span>
+                <span class="tech-bubble">Scikit-learn</span>
+              </div>
+              <p>
+                Analyzing and Mitigating Bias in Recidivism Risk Prediction Using Machine Learning
+              </p>
+            </div>
+          </div>
+          <!-- More project cards as needed... -->
+           
+
+
+
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <!-- ========== BLOGS SECTION ========== -->
+  <section id="blogs" class="blogs-section card-section">
+    <div class="container">
+      <h2 class="section-title">Blogs</h2>
+      <div class="blogs-container">
+        
+        <!-- Blog Card (Simplified like project cards) -->
+        <div class="blog-card pop-on-scroll">
+          <img src="images/battovreg.webp" alt="Blog 1" />
+          <div class="blog-info">
+            <h3>Battling Overfitting through Regularization</h3>
+            <p>
+              As someone who has taken at least one exam, you may know the difference between a mock test and an actual assessment. 
+              Outside of an examination hall, we prepare answers for...
+            </p>
+            <a 
+              href="https://medium.com/@pratishsmashankar/battling-overfitting-through-regularization-4ab38e74af2f" 
+              target="_blank" 
+              class="blog-link"
+            >
+              Read More
+            </a>
+          </div>
+        </div>
+        <!-- Additional blog cards here -->
+
+        <!-- Blog Card (Simplified like project cards) -->
+        <div class="blog-card pop-on-scroll">
+            <img src="images/tourterr.webp" alt="Blog 1" />
+            <div class="blog-info">
+              <h3>Touring Terraform in baby steps</h3>
+              <p>
+                When I first started exploring the AWS cloud platform, I was blown away by the seamless Graphical User Interface (GUI) 
+                it provided for all tasks. Creating Simple Secure Storage (S3) buckets to...
+            </p>
+              <a 
+                href="http://medium.com/@pratishsmashankar/terraform-in-baby-steps-2ded7b8b27f6" 
+                target="_blank" 
+                class="blog-link"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+          <!-- Additional blog cards here -->
+         
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="contact-section card-section">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <p>Have a question or want to collaborate?</p>
+      <form 
+        class="contact-form" 
+        action="mailto:your_email@example.com" 
+        method="POST" 
+        enctype="text/plain"
+      >
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="body" placeholder="Your message..." required></textarea>
+        <button type="submit" class="btn btn-primary">Send</button>
+      </form>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/pratish-mashankar/" target="_blank">
+          <img src="images/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/PratishMashankar" target="_blank">
+          <img src="images/github.png" alt="GitHub" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Pratish Mashankar. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
