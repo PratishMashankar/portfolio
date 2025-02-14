@@ -51,5 +51,59 @@ document.addEventListener("DOMContentLoaded", () => {
     navToggle.addEventListener("click", () => {
       navLinks.classList.toggle("show-links");
     });
+
+     // 1) Get references to the container & buttons
+  const projectsScroll = document.getElementById("projects-scroll");
+  const projectsPrevBtn = document.getElementById("projects-prev-btn");
+  const projectsNextBtn = document.getElementById("projects-next-btn");
+
+  // 2) Distance to scroll each time
+  const SCROLL_DISTANCE = 300;
+
+  // 3) Click event for Prev button
+  projectsPrevBtn.addEventListener("click", () => {
+    projectsScroll.scrollBy({
+      left: -SCROLL_DISTANCE,
+      behavior: "smooth"
+    });
+  });
+
+  // 4) Click event for Next button
+  projectsNextBtn.addEventListener("click", () => {
+    projectsScroll.scrollBy({
+      left: SCROLL_DISTANCE,
+      behavior: "smooth"
+    });
+  });
+
+
+  // BLOGS SCROLL LOGIC
+  const blogsScroll = document.getElementById("blogs-scroll");
+  const blogsPrevBtn = document.getElementById("blogs-prev-btn");
+  const blogsNextBtn = document.getElementById("blogs-next-btn");
+
+  // Scroll distance (adjust as you like)
+  const BLOGS_SCROLL_DISTANCE = 300;
+
+  blogsPrevBtn.addEventListener("click", () => {
+    blogsScroll.scrollBy({
+      left: -BLOGS_SCROLL_DISTANCE,
+      behavior: "smooth"
+    });
+  });
+
+  blogsNextBtn.addEventListener("click", () => {
+    blogsScroll.scrollBy({
+      left: BLOGS_SCROLL_DISTANCE,
+      behavior: "smooth"
+    });
+  });
+
+
+
+
+
+
+
   });
   

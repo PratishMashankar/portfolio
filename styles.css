@@ -406,191 +406,293 @@
   }
   
   /* PROJECTS SECTION (Horizontal Scroll) */
-/* HORIZONTAL SCROLL CONTAINER */
+
+  /* 1) SCROLL CONTAINER WRAPPER (positions arrow buttons around .projects-container) */
+.scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center; /* center the container & buttons vertically */
+  margin-bottom: 1rem; /* optional spacing below the container */
+}
+
+/* SCROLL BUTTONS (Prev/Next Arrows) */
+.scroll-btn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2; 
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-btn:hover {
+  opacity: 1;
+}
+
+/* Position each button on left or right side of the container */
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
+
+/* 2) HORIZONTAL SCROLL CONTAINER */
 .projects-container {
-    display: flex;
-    /* Don't allow wrapping; always a single row of cards */
-    flex-wrap: nowrap;  
-    /* Horizontal gap between cards */
-    gap: 2rem;           
-    /* Horizontal scroll */
-    overflow-x: auto;    
-    /* Snap effect if desired */
-    scroll-snap-type: x mandatory;
-    
-    /**
-     * Key property:
-     * "align-items: stretch" forces each card 
-     * to match the height of the tallest card.
-     */
-    align-items: stretch;
-  }
+  display: flex;
+  /* Don't allow wrapping; always a single row of cards */
+  flex-wrap: nowrap;  
+  /* Horizontal gap between cards */
+  gap: 2rem;           
+  /* Horizontal scroll */
+  overflow-x: auto;    
+  /* Snap effect if desired */
+  scroll-snap-type: x mandatory;
   
+  /**
+   * Key property:
+   * "align-items: stretch" forces each card 
+   * to match the height of the tallest card.
+   */
+  align-items: stretch;
+}
+
+/* Hide scrollbar if desired */
+.projects-container::-webkit-scrollbar {
+  display: none;
+}
+.projects-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 3) PROJECT CARD */
+.project-card {
+  /* 
+    "flex: 0 0 300px;" sets a fixed width of 300px 
+    so we get horizontally scrolling tiles.
+  */
+  flex: 0 0 300px;
+
+  /*
+    Display as a column so that the image is on top, 
+    and the text stacks below.
+  */
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+  /* Optional snapping for each card */
+  scroll-snap-align: start;
+  
+  /* Intersection Observer "pop-on-scroll" (if used) */
+  transform: translateY(var(--pop-translate));
+  opacity: 0;
+  transition: transform var(--transition-speed), opacity var(--transition-speed);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* PROJECT CARD IMAGE */
+.project-card img {
+  width: 100%;
+  height: 140px;       /* fixed image height */
+  object-fit: cover;   /* crop to fill the 140px area */
+  display: block;
+}
+
+/* PROJECT INFO */
+.project-info {
+  /* 
+    No fixed height or scroll here; 
+    the tile grows as needed, 
+    matching the tallest card in the row.
+  */
+  padding: 1rem;
+}
+
+/* PROJECT TITLE LINK */
+.project-info h3 a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+.project-info h3 a:hover {
+  color: var(--accent-color-dark);
+}
+
+/* TECH BUBBLES */
+.tech-bubbles {
+  margin: 0.5rem 0 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tech-bubble {
+  background: rgba(255,255,255,0.15);
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* PROJECT DESCRIPTION */
+.project-info p {
+  color: #b8c5d6;
+  line-height: 1.6;
+}
+
+  
+  /* ------------------------------------
+   BLOGS SECTION (Horizontal Scroll + Arrows)
+------------------------------------- */
+
+/* 1) SCROLL-CONTAINER WRAPPER 
+   Wraps the .blogs-container + arrow buttons */
+.scroll-container {
+  position: relative;
+  display: flex;
+  align-items: center;  /* center the container & buttons vertically */
+  margin-bottom: 1rem;  /* optional spacing */
+}
+
+/* 2) NEXT/PREV ARROW BUTTONS */
+.scroll-btn {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);
+  z-index: 2;  /* ensure buttons are above the cards */
+  font-size: 1.2rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-btn:hover {
+  opacity: 1;
+}
+
+/* Left arrow on the left edge, right arrow on the right edge */
+.scroll-btn.left {
+  left: 0;
+}
+.scroll-btn.right {
+  right: 0;
+}
+
+/* 3) HORIZONTAL SCROLL FOR BLOGS */
+.blogs-container {
+  display: flex;
+  flex-wrap: nowrap;            /* single horizontal row */
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  
+  /* Snap effect if you want it */
+  scroll-snap-type: x mandatory;
+  
+  /* Forces each blog-card to match the tallest card's height, if needed */
+  align-items: stretch;
+
   /* Hide scrollbar if desired */
-  .projects-container::-webkit-scrollbar {
-    display: none;
-  }
-  .projects-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
+.blogs-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* 4) BLOG CARD STYLING */
+.blog-card {
+  flex: 0 0 280px;                    /* fixed width for horizontal scroll */
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   
-  /* PROJECT CARD */
-  .project-card {
-    /* 
-      "flex: 0 0 300px;" sets a fixed width of 300px 
-      so we get horizontally scrolling tiles.
-    */
-    flex: 0 0 300px;
-  
-    /*
-      Display as a column so that the image is on top, 
-      and the text stacks below.
-    */
-    display: flex;
-    flex-direction: column;
-  
-    background: rgba(255,255,255,0.07);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  
-    /* Optional snapping for each card */
-    scroll-snap-align: start;
-    
-    /* Intersection Observer "pop-on-scroll" (if used) */
-    transform: translateY(var(--pop-translate));
-    opacity: 0;
-    transition: transform var(--transition-speed), opacity var(--transition-speed);
-  }
-  
-  .project-card:hover {
-    transform: translateY(-6px);
-  }
-  
-  /* IMAGE */
-  .project-card img {
-    width: 100%;
-    height: 140px;       /* fixed image height */
-    object-fit: cover;   /* crop to fill the 140px area */
-    display: block;
-  }
-  
-  /* PROJECT INFO */
-  .project-info {
-    /* 
-      No fixed height or scroll here; 
-      the tile grows as needed, 
-      matching the tallest card in the row.
-    */
-    padding: 1rem;
-  }
-  
-  /* PROJECT TITLE LINK */
-  .project-info h3 a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: color var(--transition-speed);
-  }
-  .project-info h3 a:hover {
-    color: var(--accent-color-dark);
-  }
-  
-  /* TECH BUBBLES */
-  .tech-bubbles {
-    margin: 0.5rem 0 1rem 0;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-  
-  .tech-bubble {
-    background: rgba(255,255,255,0.15);
-    padding: 0.3rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    color: #fff;
-    white-space: nowrap;
-  }
-  
-  /* TEXT */
-  .project-info p {
-    color: #b8c5d6;
-    line-height: 1.6;
-  }
-  
-  
-  
-  
-  
-  /* BLOGS */
-  .blogs-container {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    scroll-snap-type: x mandatory;
-  }
-  
-  .blogs-container::-webkit-scrollbar {
-    display: none;
-  }
-  .blogs-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .blog-card {
-    flex: 0 0 280px;
-    background: rgba(255,255,255,0.07);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    overflow: hidden;
-  
-    transform: translateY(var(--pop-translate));
-    opacity: 0;
-    transition: transform var(--transition-speed), opacity var(--transition-speed);
-    scroll-snap-align: start;
-  }
-  
-  .blog-card:hover {
-    transform: translateY(-6px);
-  }
-  
-  .blog-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .blog-info {
-    padding: 1rem;
-  }
-  
-  .blog-info h3 {
-    color: var(--accent-color);
-    margin-bottom: 0.3rem;
-  }
-  
-  .blog-info p {
-    color: #b8c5d6;
-    line-height: 1.4;
-    margin-bottom: 0.8rem;
-  }
-  
-  .blog-link {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color var(--transition-speed);
-  }
-  
-  .blog-link:hover {
-    color: var(--accent-color-dark);
-  }
+  /* Intersection Observer "pop-on-scroll" effect (if used) */
+  transform: translateY(var(--pop-translate));
+  opacity: 0;
+  transition: transform var(--transition-speed), opacity var(--transition-speed);
+
+  /* For snapping each card into view if scroll-snap is used */
+  scroll-snap-align: start;
+}
+
+/* Hover raise effect */
+.blog-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Blog card image with fixed height */
+.blog-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Blog content area */
+.blog-info {
+  padding: 1rem;
+}
+
+/* Title */
+.blog-info h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.3rem;
+}
+
+/* Paragraph text */
+.blog-info p {
+  color: #b8c5d6;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+/* Read More link */
+.blog-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-speed);
+}
+
+.blog-link:hover {
+  color: var(--accent-color-dark);
+}
+
   
   /* CONTACT */
   .contact-section {

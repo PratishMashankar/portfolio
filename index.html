@@ -302,17 +302,25 @@
 
  <!-- ========== PROJECTS SECTION ========== -->
 <section id="projects" class="projects-section card-section">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-container">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
 
-        <!-- New Project -->
+    <!-- Scroll container wrapper -->
+    <div class="scroll-container">
+
+      <!-- Prev Button (left arrow) -->
+      <button class="scroll-btn left" id="projects-prev-btn">&#x25C0;</button>
+
+      <!-- The horizontal scroll container -->
+      <div class="projects-container" id="projects-scroll">
+
+        <!-- Project Card 1 -->
         <div class="project-card pop-on-scroll">
           <img src="images/e2e_textsum.webp" alt="Project 1" />
           <div class="project-info">
             <h3>
               <a 
-                href="https://github.com/PratishMashankar/end-to-end-text-summarizer" 
+                href="https://github.com/PratishMashankar/end-to-end-text-summarizer"
                 target="_blank" 
                 class="project-link"
               >
@@ -322,116 +330,121 @@
             <div class="tech-bubbles">
               <span class="tech-bubble">Hugging Face Transformers</span>
               <span class="tech-bubble">AWS (EC2, ECR, SageMaker)</span>
-              <span class="tech-bubble">Docker </span>
+              <span class="tech-bubble">Docker</span>
               <span class="tech-bubble">Python</span>
             </div>
             <p>
-                Fine-tuning a HuggingFace Transformer for text summarization with AWS deployment and CI/CD integration.
+              Fine-tuning a HuggingFace Transformer for text summarization with AWS deployment and CI/CD integration.
             </p>
           </div>
         </div>
-        <!-- More project cards as needed... -->
 
-        <!-- New Project -->
+        <!-- Project Card 2 -->
         <div class="project-card pop-on-scroll">
-            <img src="images/noahbert.png" alt="Project 1" />
-            <div class="project-info">
-              <h3>
-                <a 
-                  href="https://github.com/PratishMashankar/noahbert-hatespeech-detection.git" 
-                  target="_blank" 
-                  class="project-link"
-                >
+          <img src="images/noahbert.png" alt="Project 1" />
+          <div class="project-info">
+            <h3>
+              <a 
+                href="https://github.com/PratishMashankar/noahbert-hatespeech-detection.git" 
+                target="_blank" 
+                class="project-link"
+              >
                 Multi-Class Hate Speech Classification using NoahBERT
-
-                </a>
-              </h3>
-              <div class="tech-bubbles">
-                <span class="tech-bubble">BERT</span>
-                <span class="tech-bubble">Pytorch</span>
-                <span class="tech-bubble">Python </span>
-                <span class="tech-bubble">Scikit-learn</span>
-              </div>
-              <p>
-                Enhanced Hate Speech Classification with NoahBERT
-              </p>
+              </a>
+            </h3>
+            <div class="tech-bubbles">
+              <span class="tech-bubble">BERT</span>
+              <span class="tech-bubble">Pytorch</span>
+              <span class="tech-bubble">Python</span>
+              <span class="tech-bubble">Scikit-learn</span>
             </div>
+            <p>
+              Enhanced Hate Speech Classification with NoahBERT
+            </p>
           </div>
-          <!-- More project cards as needed... -->
+        </div>
 
-          <!-- New Project -->
+        <!-- Project Card 3 -->
         <div class="project-card pop-on-scroll">
-            <img src="images/gramrepro.png" alt="Project 1" />
-            <div class="project-info">
-              <h3>
-                <a 
-                  href="https://github.com/PratishMashankar/grammarly-reproduction.git" 
-                  target="_blank" 
-                  class="project-link"
-                >
+          <img src="images/gramrepro.png" alt="Project 1" />
+          <div class="project-info">
+            <h3>
+              <a 
+                href="https://github.com/PratishMashankar/grammarly-reproduction.git" 
+                target="_blank" 
+                class="project-link"
+              >
                 IteraTeR Reproducibility Study
-
-                </a>
-              </h3>
-              <div class="tech-bubbles">
-                <span class="tech-bubble">Transformers </span>
-                <span class="tech-bubble">BERT, RoBERTa </span>
-                <span class="tech-bubble">XLM-RoBERTa, mT5 </span>
-                <span class="tech-bubble">BART, Pegasus </span>
-                <span class="tech-bubble">Pytorch</span>
-                <span class="tech-bubble">Python </span>
-                <span class="tech-bubble">Google API</span>
-              </div>
-              <p>
-                Reproducibility Study of Iterative Text Revision and Multilingual Intent Classification
-              </p>
+              </a>
+            </h3>
+            <div class="tech-bubbles">
+              <span class="tech-bubble">Transformers</span>
+              <span class="tech-bubble">BERT, RoBERTa</span>
+              <span class="tech-bubble">XLM-RoBERTa, mT5</span>
+              <span class="tech-bubble">BART, Pegasus</span>
+              <span class="tech-bubble">Pytorch</span>
+              <span class="tech-bubble">Python</span>
+              <span class="tech-bubble">Google API</span>
             </div>
+            <p>
+              Reproducibility Study of Iterative Text Revision and Multilingual Intent Classification
+            </p>
           </div>
-          <!-- More project cards as needed... -->
+        </div>
 
-            <!-- New Project -->
+        <!-- Project Card 4 -->
         <div class="project-card pop-on-scroll">
-            <img src="images/machinebias.webp" alt="Project 1" />
-            <div class="project-info">
-              <h3>
-                <a 
-                  href="https://github.com/PratishMashankar/auditing-for-bias.git" 
-                  target="_blank" 
-                  class="project-link"
-                >
+          <img src="images/machinebias.webp" alt="Project 1" />
+          <div class="project-info">
+            <h3>
+              <a 
+                href="https://github.com/PratishMashankar/auditing-for-bias.git" 
+                target="_blank" 
+                class="project-link"
+              >
                 Auditing for Machine Bias
-
-                </a>
-              </h3>
-              <div class="tech-bubbles">
-                <span class="tech-bubble">Gradient Boosting Machine (GBM) </span>
-                <span class="tech-bubble">Fair Classifier (Diversity Parity)</span>
-                <span class="tech-bubble">Python </span>
-                <span class="tech-bubble">Scikit-learn</span>
-              </div>
-              <p>
-                Analyzing and Mitigating Bias in Recidivism Risk Prediction Using Machine Learning
-              </p>
+              </a>
+            </h3>
+            <div class="tech-bubbles">
+              <span class="tech-bubble">Gradient Boosting Machine (GBM)</span>
+              <span class="tech-bubble">Fair Classifier (Diversity Parity)</span>
+              <span class="tech-bubble">Python</span>
+              <span class="tech-bubble">Scikit-learn</span>
             </div>
+            <p>
+              Analyzing and Mitigating Bias in Recidivism Risk Prediction Using Machine Learning
+            </p>
           </div>
-          <!-- More project cards as needed... -->
-           
+        </div>
 
+        <!-- Add more .project-card items if desired... -->
 
+      </div> <!-- End of .projects-container -->
 
-      </div>
-    </div>
-  </section>
-  
+      <!-- Next Button (right arrow) -->
+      <button class="scroll-btn right" id="projects-next-btn">&#x25B6;</button>
+    </div> <!-- End of .scroll-container -->
+
+  </div> <!-- End of .container -->
+</section>
+
   
 
   <!-- ========== BLOGS SECTION ========== -->
-  <section id="blogs" class="blogs-section card-section">
-    <div class="container">
-      <h2 class="section-title">Blogs</h2>
-      <div class="blogs-container">
+<section id="blogs" class="blogs-section card-section">
+  <div class="container">
+    <h2 class="section-title">Blogs</h2>
+
+    <!-- Scroll container wrapper -->
+    <div class="scroll-container">
+
+      <!-- Prev Button (left arrow) -->
+      <button class="scroll-btn left" id="blogs-prev-btn">&#x25C0;</button>
+
+      <!-- The horizontal scroll container -->
+      <div class="blogs-container" id="blogs-scroll">
         
-        <!-- Blog Card (Simplified like project cards) -->
+        <!-- Blog Card 1 -->
         <div class="blog-card pop-on-scroll">
           <img src="images/battovreg.webp" alt="Blog 1" />
           <div class="blog-info">
@@ -449,31 +462,37 @@
             </a>
           </div>
         </div>
-        <!-- Additional blog cards here -->
 
-        <!-- Blog Card (Simplified like project cards) -->
+        <!-- Blog Card 2 -->
         <div class="blog-card pop-on-scroll">
-            <img src="images/tourterr.webp" alt="Blog 1" />
-            <div class="blog-info">
-              <h3>Touring Terraform in baby steps</h3>
-              <p>
-                When I first started exploring the AWS cloud platform, I was blown away by the seamless Graphical User Interface (GUI) 
-                it provided for all tasks. Creating Simple Secure Storage (S3) buckets to...
+          <img src="images/tourterr.webp" alt="Blog 2" />
+          <div class="blog-info">
+            <h3>Touring Terraform in baby steps</h3>
+            <p>
+              When I first started exploring the AWS cloud platform, I was blown away by the seamless Graphical User Interface (GUI) 
+              it provided for all tasks. Creating Simple Secure Storage (S3) buckets to...
             </p>
-              <a 
-                href="http://medium.com/@pratishsmashankar/terraform-in-baby-steps-2ded7b8b27f6" 
-                target="_blank" 
-                class="blog-link"
-              >
-                Read More
-              </a>
-            </div>
+            <a 
+              href="http://medium.com/@pratishsmashankar/terraform-in-baby-steps-2ded7b8b27f6" 
+              target="_blank" 
+              class="blog-link"
+            >
+              Read More
+            </a>
           </div>
-          <!-- Additional blog cards here -->
-         
-      </div>
-    </div>
-  </section>
+        </div>
+
+        <!-- Add more .blog-card items if desired -->
+
+      </div> <!-- End .blogs-container -->
+
+      <!-- Next Button (right arrow) -->
+      <button class="scroll-btn right" id="blogs-next-btn">&#x25B6;</button>
+
+    </div> <!-- End .scroll-container -->
+  </div>
+</section>
+
 
   <!-- ========== CONTACT SECTION ========== -->
   <section id="contact" class="contact-section card-section">
